@@ -132,25 +132,73 @@ public class ExemploDialogosView extends javax.swing.JFrame {
     private void btnAlertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlertaActionPerformed
         // TODO add your handling code here:
 
+       JOptionPane.showMessageDialog(null, "Alerta", "Message Dialog", JOptionPane.WARNING_MESSAGE);
+        System.out.println("OK");
+        
     }//GEN-LAST:event_btnAlertaActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
+        int retorno = (int) JOptionPane.showConfirmDialog(null, "Deseja Salvar? ", "Título", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (retorno == 0) {
+            System.out.println("Sim");
+        }
         
+        if (retorno == 1) {
+            System.out.println("Não");
+        }
+        
+        if (retorno == 2) {
+            System.out.println("Cancelar");
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnEntradaSimplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradaSimplesActionPerformed
         // TODO add your handling code here:
+        String retorno = JOptionPane.showInputDialog(null, "Digite seu nome:");
+        if (retorno != null) {
+          System.out.println(retorno);  
+        }
+        
+        else {
+            System.out.println("Cancelar"); 
+        
+        }
         
     }//GEN-LAST:event_btnEntradaSimplesActionPerformed
 
     private void btnOpcoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcoesActionPerformed
         // TODO add your handling code here:
+        int escolha = JOptionPane.showOptionDialog(null, //Componente pai
+                "Qual sistema de medidas usar?", //mensagem,
+                "Escolha uma opção", //Título
+                JOptionPane.YES_NO_OPTION, //int optionType
+                JOptionPane.INFORMATION_MESSAGE, //Tipo de Mensagem
+                null, //Icon icon
+                new Object[]{"Km", "Milhas", "Polegadas", "Jardas"}, //Object[] opções,
+                "Km");                                             //Object initialValue 
         
+        if (escolha == 0) {
+            System.out.println("Km");
+        }
+        
+        if (escolha == 1) {
+            System.out.println("Milhas");
+        }
+        
+        if (escolha == 2) {
+            System.out.println("Polegadas");
+        }
+        
+        if (escolha == 3) {
+            System.out.println("Jardas");
+        }
     }//GEN-LAST:event_btnOpcoesActionPerformed
 
     private void btnJDialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJDialogActionPerformed
         // TODO add your handling code here:
+        ExemploJDialogView dialogoView = new ExemploJDialogView(this, true);
+        dialogoView.setVisible(true);
     }//GEN-LAST:event_btnJDialogActionPerformed
 
     /**
